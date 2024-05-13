@@ -2,6 +2,7 @@
   --color-black: #000;
   --color-white: #fff;
   --color-gray: #424242;
+  --animation-speed: 300ms;
 }
 
 html {
@@ -90,6 +91,12 @@ textarea {
   max-width: 2800px;
 }
 
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .temp-text {
   font-size: 32px;
   font-weight: 700;
@@ -106,19 +113,59 @@ textarea {
   max-width: 130px;
 }
 
-#primary-menu-toggle {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 25px;
-}
-
 .border-top-gray {
   border-top: 1px solid var(--color-gray);
 }
 .border-bottom-gray {
   border-bottom: 1px solid var(--color-gray);
+}
+
+#primary-nav-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  z-index: 30;
+}
+.primary-nav-toggle-svg {
+  overflow: visible;
+}
+#primary-nav-toggle-svg-top {
+  transform: rotate(0deg);
+  transform-origin: 90% 30%;
+  transition: all var(--animation-speed);
+}
+#primary-nav-toggle-svg-top.is-open {
+  transform: rotate(25deg);
+}
+
+#primary-nav {
+  padding: 3rem 3.55rem 3rem 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  /* hidden by default */
+  transform: translateX(100%);
+  transition: transform var(--animation-speed);
+}
+#primary-nav.is-open {
+  transform: translateX(0%);
+}
+
+#primary-nav ul {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+#primary-nav a {
+  color: var(--color-black);
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .footer-logo {
@@ -171,12 +218,39 @@ textarea {
   padding: 0;
 }
 
+#primary-nav-backdrop {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  /* hidden by default */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s var(--animation-speed),
+    opacity var(--animation-speed);
+  z-index: 5;
+}
+
+#primary-nav-backdrop.is-open {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity var(--animation-speed);
+}
+
 /* ==========================================================================
    Tailwind-inspired utility classes
    ========================================================================== */
 
 .bg-black {
   background-color: var(--color-black);
+}
+
+.bg-white {
+  background-color: var(--color-white);
 }
 
 .text-white {

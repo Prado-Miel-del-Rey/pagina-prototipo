@@ -28,7 +28,8 @@
   </head>
 
   <body>
-    <header class="p-4 py-6 relative">
+    <!-- TODO skip to main -->
+    <header class="header bg-white p-4 py-6">
       <a href="/" class="header-logo block mx-auto" title="Inicio"
         ><img
           src="img/logo.webp"
@@ -37,14 +38,16 @@
           height="60"
           alt="Prado Miel del Rey"
       /></a>
-      <button id="primary-menu-toggle" class="btn-ghost">
+      <div id="primary-nav-backdrop" role="presentation"></div>
+      <button id="primary-nav-toggle" class="btn-ghost" aria-expanded="false">
         <svg
+          class="primary-nav-toggle-svg"
           role="img"
-          aria-labelledby="menu-toggle"
+          aria-labelledby="nav-toggle-icon"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 207 140"
         >
-          <title id="menu-toggle">Toggle primary menu</title>
+          <title id="nav-toggle-icon">Alternar menú principal</title>
           <path
             fill="rgb(0, 0, 0)"
             d="M19.201,140.773 C19.999,140.773 187.650,140.773 187.869,140.773 C198.656,127.346 203.353,107.613 203.353,107.613 L3.938,107.613 C3.938,107.613 9.462,127.237 19.201,140.773 Z"
@@ -54,12 +57,40 @@
             d="M2.119,53.806 L205.253,53.806 C205.253,53.806 207.253,58.762 207.253,71.052 C207.253,83.342 205.253,88.073 205.253,88.073 L2.119,88.073 C2.119,88.073 0.119,81.253 0.119,71.052 C0.119,60.852 2.119,53.806 2.119,53.806 Z"
           />
           <path
+            id="primary-nav-toggle-svg-top"
             fill="rgb(0, 0, 0)"
             d="M19.201,0.633 C19.999,0.633 187.650,0.633 187.869,0.633 C198.656,14.060 203.353,33.793 203.353,33.793 L3.938,33.793 C3.938,33.793 9.462,14.169 19.201,0.633 Z"
           />
         </svg>
       </button>
-      <!-- <nav></nav> -->
+      <nav id="primary-nav" class="bg-white" aria-expanded="false">
+        <ul class="list-reset">
+          <li><a href="/acerca">La Miel</a></li>
+          <li><a href="/tienda">Tienda</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+          <li><a href="/acerca">La Miel</a></li>
+          <li><a href="/tienda">Tienda</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li>
+            <a href="/preguntas-frecuentes"
+              >Preguntas Frecuentes Super Long Manu Item</a
+            >
+          </li>
+          <li><a href="/acerca">La Miel</a></li>
+          <li><a href="/tienda">Tienda</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+          <li><a href="/acerca">La Miel</a></li>
+          <li><a href="/tienda">Tienda</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+          <li><a href="/acerca">La Miel</a></li>
+          <li><a href="/tienda">Tienda</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+        </ul>
+      </nav>
     </header>
     <main class="container mx-auto">
       <div>
