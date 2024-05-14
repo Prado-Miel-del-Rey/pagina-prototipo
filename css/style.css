@@ -98,13 +98,6 @@ textarea {
   z-index: 10;
 }
 
-.temp-text {
-  font-size: 32px;
-  font-weight: 700;
-  max-width: 600px;
-  text-align: center;
-}
-
 .responsive-img {
   max-width: 100%;
   height: auto;
@@ -160,17 +153,6 @@ textarea {
   transition: all var(--animation-speed);
   position: relative;
 }
-#primary-nav-toggle-svg-top:before {
-  content: " ";
-  background-color: var(--color-gold);
-  height: 20px;
-  width: 3px;
-  position: absolute;
-  left: 50%;
-  translate: -50% 0;
-  bottom: 100%;
-  border-radius: 3px 3px 0 0;
-}
 #primary-nav-toggle-svg-top.is-open {
   transform: rotate(25deg);
 }
@@ -218,7 +200,6 @@ textarea {
 }
 
 .footer-nav {
-  font-weight: 100;
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -230,7 +211,6 @@ textarea {
 }
 
 .footer-legal {
-  font-weight: 100;
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -274,6 +254,30 @@ textarea {
   visibility: visible;
   opacity: 1;
   transition: opacity var(--animation-speed);
+}
+
+.measure {
+  max-width: 600px;
+}
+
+.location-text {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+
+.apicultura {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  max-width: 900px;
+}
+.apicultura-heading {
+  position: absolute;
+  left: 50%;
+  top: 230px;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  translate: -50% 0;
 }
 
 /* ==========================================================================
@@ -330,6 +334,11 @@ textarea {
   padding-bottom: 4rem;
 }
 
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
 .py-32 {
   padding-top: 8rem;
   padding-bottom: 8rem;
@@ -355,6 +364,45 @@ textarea {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.font-thin {
+  font-weight: 100;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.center {
+  text-align: center;
 }
 
 /* ==========================================================================
@@ -419,6 +467,19 @@ textarea {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+
+@media only screen and (min-width: 600px) {
+  .apicultura {
+    grid-template-columns: 1fr 1fr;
+  }
+  .apicultura-heading {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+  .apicultura-text {
+    padding-top: 230px;
+  }
+}
 
 @media only screen and (min-width: 768px) {
   .footer-nav {
