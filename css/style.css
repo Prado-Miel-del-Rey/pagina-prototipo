@@ -120,6 +120,28 @@ textarea {
   border-bottom: 1px solid var(--color-gray);
 }
 
+/* .hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hamburger-icon > div {
+  background-color: var(--color-black);
+  height: 10px;
+  width: 100%;
+}
+.hamburger-icon > div:first-child {
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+}
+.hamburger-icon > div:nth-child(2) {
+  border-radius: 10px;
+}
+.hamburger-icon > div:last-child {
+  border-bottom-left-radius: 50% 100%;
+  border-bottom-right-radius: 50% 100%;
+} */
+
 #primary-nav-toggle {
   position: absolute;
   right: 1rem;
